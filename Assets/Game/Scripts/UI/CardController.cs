@@ -29,5 +29,4 @@ public class CardController : MonoBehaviour
 
         GameManager.cardButtonClicked?.Invoke();
     }
-
 }
