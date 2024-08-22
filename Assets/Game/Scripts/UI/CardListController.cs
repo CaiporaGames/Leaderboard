@@ -20,6 +20,7 @@ public class CardListController : MonoBehaviour
         _ = AddCardToLeaderboard("DailyButton");
     }
 
+    //TODO: Here we could use a factory design pattern if the amount of buttons get bigger.
     public async Task AddCardToLeaderboard(string buttonName)
     {
         Tuple<List<LeaderBoardItem>, string> result = null;
@@ -42,8 +43,8 @@ public class CardListController : MonoBehaviour
                     return;
             }
 
-            if(result.Item1.Count > 0) 
-                SetCardFields(result.Item1);
+            if(result.Item1.Count > 0) SetCardFields(result.Item1);
+            else ClearContent();
         }
         catch (Exception ex)
         {
@@ -54,6 +55,7 @@ public class CardListController : MonoBehaviour
 
     private void SetCardFields(List<LeaderBoardItem> players)
     {
+        ClearContent();
         foreach (LeaderBoardItem player in players)
         {
             GameObject cardObject = Instantiate(cardPrefab, transform.position, Quaternion.identity);
@@ -63,6 +65,14 @@ public class CardListController : MonoBehaviour
         }
     }
 
+    //TODO: We should use a object pooling here but this is just a test i will let as is.
+    void ClearContent()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
     private void OnDestroy()
     {
         ButtonController.buttonClicked -= AddCardToLeaderboard;

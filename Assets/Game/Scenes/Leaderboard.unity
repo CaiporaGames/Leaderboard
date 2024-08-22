@@ -1975,8 +1975,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1015647324}
   m_HandleRect: {fileID: 1015647323}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4219,6 +4219,13 @@ PrefabInstance:
         type: 3}
       propertyPath: canSetButtonToActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572344818548985123, guid: 83538952c32412a49854d76ae2f9918b,
+        type: 3}
+      propertyPath: m_text
+      value: 'Daily
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8805764990541364234, guid: 83538952c32412a49854d76ae2f9918b,
         type: 3}
